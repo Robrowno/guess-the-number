@@ -13,31 +13,34 @@ import random
 def guessing_function():
     """
     A function that generates a random number and upon
-    user input guesses, generates an automatic response. 
+    user input guesses, generates an automatic response.
     Ends when the user correctly guesses the number.
 
     """
 
     random_number_100 = random.randint(1, 101)
 
-    user_guess = int(input("Guess an integer between 1 and 100: "))
+    try:
+        user_guess = int(input("Guess an integer between 1 and 100: "))
+        while random_number_100 != user_guess:
+            if user_guess > 100 or user_guess < 1:
+                print(f"You can't choose {user_guess}\n")
+                print("Please pick an integer between 1 and 100 only!")
+                pass
+                user_guess = int(input("Guess an integer between 1 and 100: "))
 
-    while random_number_100 != user_guess:
+            elif user_guess > random_number_100:
+                print("Too high, try a bit lower!")
+                user_guess = int(input("Guess an integer between 1 and 100: "))
+            elif user_guess < random_number_100:
+                print("Too low, try a bit higher!")
+                user_guess = int(input("Guess an integer between 1 and 100: "))
 
-        if user_guess > 100 or user_guess < 1:
-            print(f"You can't choose {user_guess}\n")
-            print("Please pick an integer between 1 and 100 only!")
-            pass
-            user_guess = int(input("Guess an integer between 1 and 100: "))
-    
-        elif user_guess > random_number_100:
-            print("Too high, try a bit lower!")
-            user_guess = int(input("Guess an integer between 1 and 100: "))
-        elif user_guess < random_number_100:
-            print("Too low, try a bit higher!")
-            user_guess = int(input("Guess an integer between 1 and 100: "))
-        
-    print(f"You got it! The number was: {random_number_100}")
+        print(f"You got it! The number was: {random_number_100}")
+
+    except ValueError:
+        print("Wrong value! Please enter a number between 1 and 100!")
+        guessing_function()
 
 
 guessing_function()
@@ -54,11 +57,18 @@ guessing_function()
 
 def comp_guessing_function():
 
+    """
+    A function that generates a random number guess between
+    two variables of value 1 and 101, and upon user input, 
+    adjusts the next guess based on whether the user feedback
+    requires a higher or lower number.
+    """
+
     print("Pick a number between 1 and 100, and I'll try to guess it!")
 
     min = 1
     max = 101
-    
+
     user_response = ""
     while user_response != 3:
         computer_guess = random.randint(min, max)
@@ -77,7 +87,7 @@ comp_guessing_function()
 
 # Program begins when user presses a key
 # User calls in an input whether they think it will be heads or tails
-# The computer makes a guess of its own 
+# The computer makes a guess of its own
 # The 'coin' is flipped and a result is generated
-# See who wins the round 
+# See who wins the round
 # Prompt to either 'flip a coin' again or do something else
