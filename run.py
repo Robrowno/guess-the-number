@@ -14,23 +14,18 @@ print("2 for Guess-The-Number (AI)")
 print("3 for the 'coin-toss' program\n")
 
 
-def start_menu():
+
+def get_int(str):
     """
-    Runs after the menu introduction and provides player with an input to
-    pick one of three options.
-        
+    Function that handles user input for different 
     """
-
-    player_choices = [1, 2, 3]
-
-    for choice in player_choices:
-        print(choice)
-        
-        
-
-
-
-# start_menu()
+    while True:
+        try:
+            # num = int(input("Please enter 0 or 1: "))
+            return int(input(str))
+            
+        except ValueError:
+            print("Not an integer, try again")
 
 
 
@@ -67,7 +62,7 @@ def guessing_function():
                 print(user_guess)
                 user_guess = int(input("Guess an integer between 1 and 100: "))
 
-            
+
 
         except ValueError:
             print("Wrong value! Please enter a number between 1 and 100!")
@@ -126,30 +121,61 @@ def comp_guessing_function():
 # See who wins the round
 # Prompt to either 'flip a coin' again or do something else
 
-def get_int():
-    while True:
-        try:
-            num = int(input("Please enter 0 or 1: "))
-            if num == 1 or num == 0:
-                return num
-            else:
-                print("Not 0 or 1, please enter one of those options")
-        except ValueError:
-            print("Not an integer, try again")
-
-
 
 def coin_toss():
     coin = {
-        "heads" : 0,
-        "tails" : 1
+        "heads": 0,
+        "tails": 1
     }
 
     input("Press enter to begin...")
 
-    print("Make a guess, 0 for heads or 1 for tails\n")
-
-    user_guess = get_int()
-
+    coin_faces = list(coin.values())
     
+    user_guess = get_int("Please enter either [0] for heads or [1] for tails!\n")
+
+    flip_coin = random.choice(coin_faces)
+    print(flip_coin)
+    
+    while user_guess != 0 or user_guess != 1:
+        if flip_coin == user_guess:
+            print(f"You guessed {user_guess} and the result was {flip_coin}, good guess!")
+        elif flip_coin != user_guess:
+            print(f"You guessed {user_guess}, and the result was {flip_coin},try again!")
+        else:
+            print("Please enter [0] or [1] only.")
+        user_guess = get_int("Please enter either [0] for heads or [1] for tails!\n")
+
+
+coin_toss()
+
+
+def start_menu():
+    """
+    Runs after the menu introduction and provides player with an input to
+    pick one of three options.
+
+    """
+
+    menu_input = get_int("Please pick a number from the options provided: ")
+
+    while menu_input != 0:
+
+        if menu_input == 1:
+            guessing_function()
+
+        elif menu_input == 2:
+            comp_guessing_function()
+
+        elif menu_input == 3:
+            coin_toss()
+        else:
+            print("Please enter 0, 1, 2 or 3 only")
+            print("0 to exit the application")
+            print("1 for Guess-The-Number")
+            print("2 for Guess-The-Number (AI)")
+            print("3 for the 'coin-toss' program\n")
+        menu_input = get_int("Please pick a number from the options provided:")
+    print("Bye!")
+
 
