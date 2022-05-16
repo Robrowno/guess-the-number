@@ -1,28 +1,25 @@
 import random
 
 # Welcome message to my application
-# Present user with options with which program they would like to run 
+# Present user with options with which program they would like to run
 # User makes choice with input and respective program begins
-# At the end of each program, the computer will ask the user if they 
+# At the end of each program, the computer will ask the user if they
 # would like to return to this 'menu' or run the program again
-print("Welcome to my Guess-The-Number python application!")
-print("A game where you or the computer can try to guess eachother's number")
-print("A 'coin toss' program is included as well, if you prefer those odds!\n")
-print("Please enter:\n")
-print("1 for Guess-The-Number")
-print("2 for Guess-The-Number (AI)")
-print("3 for the 'coin-toss' program\n")
 
 
-def get_int(str):
+def get_dict_key(dict, value):
+
+    return list(dict.keys())[list(dict.values()).index(value)]
+
+
+def get_int(string):
     """
-    Function that handles user input for different 
+    Function that handles user input for different
     """
     while True:
         try:
-            # num = int(input("Please enter 0 or 1: "))
-            return int(input(str))
-            
+            return int(input(string))
+
         except ValueError:
             print("Not an integer, try again")
 
@@ -65,6 +62,8 @@ def guessing_function():
             print(user_guess)
 
     print(f"You got it! The number was: {random_number_100}")
+    end_of_game("guess")
+
 
 
 # guessing_function()
@@ -74,7 +73,7 @@ def guessing_function():
 
 # User chooses a number
 # Computer makes a guess
-# User gets an input to say if the number needs to be lower or higher 
+# User gets an input to say if the number needs to be lower or higher
 # by entering 1 for lower, 2 for higher or 3 for when the number is correct
 # Continues until computer gets to the correct number
 # prompt to play again or something else
@@ -84,7 +83,7 @@ def comp_guessing_function():
 
     """
     A function that generates a random number guess between
-    two variables of value 1 and 101, and upon user input, 
+    two variables of value 1 and 101, and upon user input,
     adjusts the next guess based on whether the user feedback
     requires a higher or lower number.
     """
@@ -108,11 +107,12 @@ def comp_guessing_function():
         except ValueError:
             print("Enter [1] too low, [2] too high or [3] correct, only.")
             user_response = int(input("Too low? Press [1]. Too high? Press [2]. Correct? press [3]! "))
-    
+
     print("Hoorah! I guessed your number")
+    end_of_game("guess-ai")
 
 
-comp_guessing_function()
+# comp_guessing_function()
 
 
 # Coin Toss (Heads/Tails)
@@ -124,8 +124,23 @@ comp_guessing_function()
 # See who wins the round
 # Prompt to either 'flip a coin' again or do something else
 
+def get_toss(string):
+    
+    while True:
+        user_value = get_int(string)
+        if user_value == 0 or user_value == 1:
+            return user_value
+        else:
+            print("Invalid input, try again")
+
 
 def coin_toss():
+
+    """
+    Function to replicate a random coin toss,
+    where the user can guess in advance what the
+    outcome will be.
+    """
     coin = {
         "heads": 0,
         "tails": 1
@@ -134,25 +149,56 @@ def coin_toss():
     input("Press enter to begin...")
 
     coin_faces = list(coin.values())
-    
-    user_guess = get_int("Please enter [0] for heads or [1] for tails!\n")
+
+    user_guess = get_toss("Please enter [0] for heads or [1] for tails!\n")
 
     flip_coin = random.choice(coin_faces)
-    print(flip_coin)
-    
+    comp_coin_value = get_dict_key(coin, flip_coin)
+    user_coin_value = get_dict_key(coin, user_guess)
+
     while user_guess != 0 or user_guess != 1:
-        if flip_coin == user_guess:
-            print(f"You guessed {user_guess}")
-            print(f"The result was {flip_coin}, You got it!")
-        elif flip_coin != user_guess:
-            print(f"You guessed {user_guess}")
-            print(f"The result was {flip_coin}, try again!")
-        else:
-            print("Please enter [0] or [1] only.")
-        user_guess = get_int("Please enter [0] for heads or [1] for tails!\n")
+
+        try:
+            if flip_coin == user_guess:
+                print(f"You guessed {user_coin_value}({user_guess})")
+                print(f"The result was {comp_coin_value}, You got it!")
+                break
+            elif flip_coin != user_guess:
+                print(f"You guessed {user_coin_value}({user_guess})")
+                print(f"The result was {comp_coin_value}, try again!")
+                break
+        except ValueError:
+            print("Invalid input. Please enter [0] or [1] only!")
+        user_guess = get_toss("Please enter [0] for heads or [1] for tails!\n")
+        flip_coin = random.choice(coin_faces)
+        comp_coin_value = get_dict_key(coin, flip_coin)
+        user_coin_value = get_dict_key(coin, user_guess)
+    end_of_game("coin-toss")
+
+
 
 
 # coin_toss()
+
+def end_of_game(game):
+
+    print("If you'd like to play again, press [x].")
+    print("If not, to go back to the menu, press [c]")
+    decision = input("")
+
+    while decision != "x" or decision != "c":
+        if decision == "x":
+            if game == "guess":
+                guessing_function()
+            elif game == "guess-ai":
+                comp_guessing_function()
+            elif game == "coin-toss":
+                coin_toss()
+        elif decision == "c":
+            start_menu()
+        else:
+            print("Wrong input./n")
+        decision = input("Enter [x] - play again or [c] - go back: ")
 
 
 def start_menu():
@@ -161,6 +207,13 @@ def start_menu():
     pick one of three options.
 
     """
+    print("Welcome to my Guess-The-Number python application!")
+    print("A game where you or the computer can try to guess eachother's number")
+    print("A 'coin toss' program is included as well, if you prefer those odds!\n")
+    print("Please enter:\n")
+    print("1 for Guess-The-Number")
+    print("2 for Guess-The-Number (AI)")
+    print("3 for the 'coin-toss' program\n")
 
     menu_input = get_int("Please pick a number from the options provided: ")
 
@@ -185,4 +238,3 @@ def start_menu():
 
 
 start_menu()
-
