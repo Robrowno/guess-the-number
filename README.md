@@ -55,3 +55,19 @@ Live Link to the app on Heroku here: xxx
 
 ## Credits
 
+I sought inspiration from many different websites for this project. 
+With many thanks to the following:
+
+- An example guessing game by PythonForBeginners: [PythonForBeginners Link_1](https://www.pythonforbeginners.com/code-snippets-source-code/python-guessing-game)
+- An example coin-toss game that returns the result of 10,000 coin tosses: [PythonForBeginners Link_2](https://www.pythonforbeginners.com/random/how-to-use-the-random-module-in-python)
+- Lessons on a 2 guessing games inspired this project from freeCodeCamp.org: [freeCodeCamp](https://www.youtube.com/watch?v=8ext9G7xspg&list=WL&index=1)
+- Superb information on handling user inputs: [TowardsDataScience](https://towardsdatascience.com/a-complete-guide-to-user-input-in-python-727561fc16e1#:~:text=Python%20provides%20a%20simple%20framework%20for%20getting%20user%20input.,input%20into%20the%20required%20format.)
+- "Key by Value" solution for my coin toss game inspired by this answer on Stack Overflow: [Stack Overflow Link_1](https://stackoverflow.com/questions/8023306/get-key-by-value-in-dictionary)
+- Solution for finding a way to clear the terminal as a function from Stack Overflow: [Stack Overflow Link_2](https://stackoverflow.com/questions/2084508/clear-terminal-in-python)
+
+
+I couldn't have done this project without the help of some key individuals:
+
+- Daisy McGirr - My Code Institute mentor. Helped guide my along the course with advice on scope and assesment criteria, as well as ideas for the project.
+- Nickolay Ninov - A massive thanks to Nickolay for providing so much help and support over the course of the project. He helped me resolve bugs and issues that I'd have been stuck on without his help!
+- London C.I Community - Providing encouragement and feedback for my project which is always welcome. They continue to support as per my previous projects and are a great group to be a part of!
