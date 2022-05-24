@@ -55,7 +55,7 @@ Live Link to the app on Heroku here: xxx
 
 ## Credits
 
-I sought inspiration from many different websites for this project. 
+I sought inspiration from many different websites/sources for this project. 
 With many thanks to the following:
 
 - An example guessing game by PythonForBeginners: [PythonForBeginners Link_1](https://www.pythonforbeginners.com/code-snippets-source-code/python-guessing-game)

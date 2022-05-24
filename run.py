@@ -168,6 +168,33 @@ def coin_toss():
     end_of_game("coin-toss")
 
 
+def end_of_game(game):
+
+    """
+    Function to give user a choice whether to repeat the program
+    or to return to the start menu.
+    """
+
+    print("If you'd like to play again, press [x].")
+    print("If not, to go back to the menu, press [c]")
+    decision = input("")
+
+    while decision != "x" or decision != "c":
+        clear_terminal()
+        if decision == "x":
+            if game == "guess":
+                guessing_function()
+            elif game == "guess-ai":
+                comp_guessing_function()
+            elif game == "coin-toss":
+                coin_toss()
+        elif decision == "c":
+            start_menu()
+        else:
+            print("Wrong input./n")
+        decision = input("Enter [x] - play again or [c] - go back: ")
+
+
 def clear_terminal():
     """
     This function will clear the terminal at the end of a program
@@ -182,32 +209,6 @@ def clear_terminal():
         os.system("CLS")
     else:
         print("\n" * 150)
-
-
-def end_of_game(game):
-
-    """
-    Function to give user a choice whether to repeat the program
-    or to return to the start menu.
-    """
-
-    print("If you'd like to play again, press [x].")
-    print("If not, to go back to the menu, press [c]")
-    decision = input("")
-
-    while decision != "x" or decision != "c":
-        if decision == "x":
-            if game == "guess":
-                guessing_function()
-            elif game == "guess-ai":
-                comp_guessing_function()
-            elif game == "coin-toss":
-                coin_toss()
-        elif decision == "c":
-            start_menu()
-        else:
-            print("Wrong input./n")
-        decision = input("Enter [x] - play again or [c] - go back: ")
 
 
 def start_menu():
