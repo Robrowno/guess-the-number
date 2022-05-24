@@ -32,7 +32,7 @@ def guessing_function():
     """
 
     random_number_100 = random.randint(1, 101)
-    user_guess = int(input("Guess an integer between 1 and 100: "))
+    user_guess = get_int("Guess an integer between 1 and 100: ")
     while random_number_100 != user_guess:
 
         try:
@@ -40,18 +40,17 @@ def guessing_function():
             if user_guess > 100 or user_guess < 1:
                 print(f"You can't choose {user_guess}\n")
                 print("Please pick an integer between 1 and 100 only!")
-                print(user_guess)
-                user_guess = int(input("Guess an integer between 1 and 100: "))
+                user_guess = get_int("Guess an integer between 1 and 100: ")
 
             elif user_guess > random_number_100:
 
                 print("Too high, try a bit lower!")
                 print(user_guess)
-                user_guess = int(input("Guess an integer between 1 and 100: "))
+                user_guess = get_int("Guess an integer between 1 and 100: ")
             elif user_guess < random_number_100:
                 print("Too low, try a bit higher!")
                 print(user_guess)
-                user_guess = int(input("Guess an integer between 1 and 100: "))
+                user_guess = get_int("Guess an integer between 1 and 100: ")
 
         except ValueError:
             print("Wrong value! Please enter a number between 1 and 100!")
@@ -96,8 +95,11 @@ def comp_guessing_function():
                 mini = computer_guess + 1
             elif user_response == 2:
                 maxi = computer_guess - 1
+            elif user_response > 3:
+                print("Sorry, enter [1], [2] or [3] only!\n")
+                user_response = int(input("Too low? Press [1]. Too high? Press [2]. Correct? press [3]! "))
         except ValueError:
-            print("Enter [1] too low, [2] too high or [3] correct, only.")
+            print("Enter [1] too low, [2] too high or [3] correct, only.\n")
             user_response = int(input("Too low? Press [1]. Too high? Press [2]. Correct? press [3]! "))
 
     print("Hoorah! I guessed your number")
@@ -191,7 +193,7 @@ def end_of_game(game):
         elif decision == "c":
             start_menu()
         else:
-            print("Wrong input./n")
+            print("Wrong input.\n")
         decision = input("Enter [x] - play again or [c] - go back: ")
 
 
