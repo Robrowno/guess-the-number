@@ -37,17 +37,39 @@ Live Link to the app on Heroku here: xxx
 
 ## Wireframe 
 
+- I used Blasamiq to make a flow chart to map out the logic of how I wanted the program to run. 
+
+
 ## UX Description
 
 ## Technologies Used
 
+- Python: A form of O.O.P (Object Oriented Programming) that is used for data handling. This has been the main tool used in my project.
+- Github: The cloud based service for hosting repositories for over 73 million developers.
+- Gitpod: An open-source developer platform for remote development.
+- Git: Used to add, commit and push my changes to the server.
+- Balsamiq: Used to plan and create my wireframes for my projects.
+- Heroku: Heroku is a platform as a service (PaaS) that enables developers to build, run, and operate applications entirely in the cloud.
+
 ## Application Features
+
+This application comprises of 3 core programs:
+
+1. A guessing game (Player)
+2. Another guessing game (Computer)
+3. A 'Coin-Toss' program
+
+
 
 ## Other Features to Implement
 
 ## Testing and Validation
 
 ## Bugs and Issues
+
+- Terminal Clearing
+- Converting back to key name from value
+- Guessing game ai input handling issues
 
 ## Peer Reviews
 
