@@ -86,6 +86,8 @@ With many thanks to the following:
 - Superb information on handling user inputs: [TowardsDataScience](https://towardsdatascience.com/a-complete-guide-to-user-input-in-python-727561fc16e1#:~:text=Python%20provides%20a%20simple%20framework%20for%20getting%20user%20input.,input%20into%20the%20required%20format.)
 - "Key by Value" solution for my coin toss game inspired by this answer on Stack Overflow: [Stack Overflow Link_1](https://stackoverflow.com/questions/8023306/get-key-by-value-in-dictionary)
 - Solution for finding a way to clear the terminal as a function from Stack Overflow: [Stack Overflow Link_2](https://stackoverflow.com/questions/2084508/clear-terminal-in-python)
+- Colorama Youtube tutorial by Tech with Tim: [Tech With Tim](https://www.youtube.com/watch?v=u51Zjlnui4Y)
+- Link to Colorama page/tutorial: [Colorama](https://pypi.org/project/colorama/)
 
 
 I couldn't have done this project without the help of some key individuals:
