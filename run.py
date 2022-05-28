@@ -78,7 +78,9 @@ class PlayerGuesses(Helper):
 
             if user_guess > 100 or user_guess < 1:
                 print(f"\n{Fore.RED}You can't choose {user_guess}")
-                print(f"{Fore.YELLOW}Please pick an integer between 1 and 100 only!\n")
+                print(
+                    f"{Fore.YELLOW}Pick an integer between 1-100 only!\n"
+                    )
 
             elif user_guess > random_number_100:
                 print("Too high, try a bit lower!")
@@ -150,7 +152,7 @@ class ComputerGuesses(Helper):
         self.guesses = 0
 
         print("Pick a number between 1 and 100, and I'll try to guess it!")
-        user_response = self.__number_handler("Enter your chosen number here: ")
+        user_response = self.__number_handler("Enter your chosen number: ")
 
         mini = 1
         maxi = 101
@@ -171,7 +173,9 @@ class ComputerGuesses(Helper):
             elif user_response == 3:
                 break
 
-        print(f"{Fore.GREEN}Hoorah! I guessed your number in {self.guesses} attempts!")
+        print(
+            f"{Fore.GREEN}Yes! I got your number in {self.guesses} attempts!"
+            )
 
 
 # Coin Toss (Heads/Tails)
@@ -222,7 +226,9 @@ class CoinToss(Helper):
 
         coin_faces = list(coin.values())
 
-        user_guess = self.__get_toss(f"{Fore.RESET}Please enter [0] for heads or [1] for tails!\n")
+        user_guess = self.__get_toss(
+            f"{Fore.RESET}Please enter [0] for heads or [1] for tails!\n"
+            )
 
         flip_coin = random.choice(coin_faces)
         comp_coin_value = self.get_dict_key(coin, flip_coin)
@@ -233,15 +239,17 @@ class CoinToss(Helper):
             try:
                 if flip_coin == user_guess:
                     print(f"You guessed {user_coin_value}({user_guess})")
-                    print(f"{Fore.GREEN}The result was {comp_coin_value}, You got it!")
+                    print(f"{Fore.GREEN}The result was {comp_coin_value}")
+                    print("You got it!")
                     break
                 elif flip_coin != user_guess:
                     print(f"You guessed {user_coin_value}({user_guess})")
-                    print(f"{Fore.BLUE}The result was {comp_coin_value}, try again!")
+                    print(f"{Fore.BLUE}The result was {comp_coin_value}")
+                    print("Try again!")
                     break
             except ValueError:
-                print(f"{Fore.RED}Invalid input. Please enter [0] or [1] only!")
-            user_guess = self.__get_toss("Please enter [0] for heads or [1] for tails!\n")
+                print(f"{Fore.RED}Invalid input. Enter [0] or [1] only!")
+            user_guess = self.__get_toss("Enter [0] (heads) or [1] (tails)!\n")
             flip_coin = random.choice(coin_faces)
             comp_coin_value = self.get_dict_key(coin, flip_coin)
             user_coin_value = self.get_dict_key(coin, user_guess)
@@ -267,7 +275,7 @@ class Games(Helper):
 
         print("Welcome to my Guess-The-Number python application!")
         print("A game where you or the computer can try to guess a number.")
-        print("A 'coin toss' program is included too, if you prefer those odds!\n")
+        print("A 'coin toss' program is included too as a bonus!\n")
         print("Please enter:\n")
         print("0 to exit the application")
         print("1 for Guess-The-Number")
@@ -285,7 +293,7 @@ class Games(Helper):
 
             self.__menu()
 
-            menu_input = self.get_int("Please pick a number from the options provided: ")
+            menu_input = self.get_int("Please pick a number to begin: ")
 
             if menu_input == 0:
                 break
