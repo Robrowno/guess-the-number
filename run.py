@@ -74,6 +74,7 @@ class PlayerGuesses(Helper):
         random_number_100 = random.randint(1, 101)
         self.guesses = 0
         user_guess = self.get_int("\nGuess an integer between 1 and 100: ")
+        past_guesses = []
         while random_number_100 != user_guess:
 
             if user_guess > 100 or user_guess < 1:
@@ -81,15 +82,22 @@ class PlayerGuesses(Helper):
                 print(
                     f"{Fore.YELLOW}Pick an integer between 1-100 only!\n"
                     )
-
             elif user_guess > random_number_100:
-                print("\nToo high, try a bit lower!")
+                print(f"{Fore.MAGENTA}\nToo high, try a bit lower!\n")
                 self.guesses += 1
-                print(f"{Style.DIM}Your last guess was {user_guess}\n")
+                print(f"{Style.DIM}Your last guess was {user_guess}")
+                past_guesses.append(user_guess)
+                print(
+                    f"{Style.DIM}Your previous guesses:{past_guesses}\n"
+                    )
             elif user_guess < random_number_100:
-                print("\nToo low, try a bit higher!")
+                print(f"{Fore.CYAN}\nToo low, try a bit higher!\n")
                 self.guesses += 1
-                print(f"{Style.DIM}Your last guess was {user_guess}\n")
+                print(f"{Style.DIM}Your last guess was {user_guess}")
+                past_guesses.append(user_guess)
+                print(
+                    f"{Style.DIM}Your previous guesses:{past_guesses}\n"
+                    )
 
             user_guess = self.get_int("Guess an integer between 1 and 100: ")
 
