@@ -2,7 +2,7 @@ import random
 import os
 
 import colorama
-from colorama import Fore
+from colorama import Fore, Style
 colorama.init(autoreset=True)
 
 
@@ -73,7 +73,7 @@ class PlayerGuesses(Helper):
 
         random_number_100 = random.randint(1, 101)
         self.guesses = 0
-        user_guess = self.get_int("Guess an integer between 1 and 100: ")
+        user_guess = self.get_int("\nGuess an integer between 1 and 100: ")
         while random_number_100 != user_guess:
 
             if user_guess > 100 or user_guess < 1:
@@ -83,13 +83,13 @@ class PlayerGuesses(Helper):
                     )
 
             elif user_guess > random_number_100:
-                print("Too high, try a bit lower!")
+                print("\nToo high, try a bit lower!")
                 self.guesses += 1
-                print(user_guess)
+                print(f"{Style.DIM}Your last guess was {user_guess}\n")
             elif user_guess < random_number_100:
-                print("Too low, try a bit higher!")
+                print("\nToo low, try a bit higher!")
                 self.guesses += 1
-                print(user_guess)
+                print(f"{Style.DIM}Your last guess was {user_guess}\n")
 
             user_guess = self.get_int("Guess an integer between 1 and 100: ")
 
@@ -174,7 +174,7 @@ class ComputerGuesses(Helper):
                 break
 
         print(
-            f"\n{Fore.GREEN}Yes! I got your number in {self.guesses} attempts!"
+            f"\n{Fore.GREEN}I got your number in {self.guesses} attempts!"
             )
 
 
@@ -273,10 +273,10 @@ class Games(Helper):
 
     def __menu(self):
 
-        print("Welcome to my Guess-The-Number python application!\n")
+        print(f"{Style.BRIGHT}Welcome to my Guess-The-Number application!\n")
         print("A game where you or the computer can try to guess a number.")
         print("A 'coin toss' program is included too as a bonus!\n")
-        print("Please enter:\n")
+        print(f"{Style.BRIGHT}Please enter:\n")
         print("0 to exit the application")
         print("1 for Guess-The-Number")
         print("2 for Guess-The-Number (AI)")
