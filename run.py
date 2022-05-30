@@ -145,9 +145,10 @@ class ComputerGuesses(Helper):
         while True:
             var3 = self.get_int(string)
             if var3 >= 1 and var3 <= 3:
-                return var3
+                break
             else:
                 print(f"{Fore.RED}Input is not between 1 and 3")
+        return var3
 
     def play(self):
 
