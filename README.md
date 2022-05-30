@@ -14,7 +14,7 @@ The desired goals from the perspective of myself and for the player reflects thi
 
 Guess-The-Number is deployed on Heroku. 
 
-Live Link to the app on Heroku here: xxx
+Live Link to the app on Heroku here: [Guess-The-Number](https://guess-the-number-pp3.herokuapp.com/)
 
 ---
 ## Application across difference platforms 
@@ -38,9 +38,51 @@ Live Link to the app on Heroku here: xxx
 ## Wireframe 
 
 - I used Blasamiq to make a flow chart to map out the logic of how I wanted the program to run. 
+![Balsamiq Wireframe](/assets/readme-images/pp3-wireframe.png)
+
+I used this model as a template for me to visualise how I was going to go about making this application.
+You can see in the original flow chart I didn't come up with the option to exit the program yet. The coloured asterisks are meant to help visually guide where you are taken back to at the end of round depending on whether you want to play again or exit the game.
+
+### Program flow charts:
+
+### Main Menu Flow chart 
+![Main Menu](/assets/readme-images/game-menu-flowchart.png)
+
+### 1st Game Flow chart 
+![Game1](/assets/readme-images/game1-flowchart.png)
+
+### 2nd Game Flow chart
+![Game2](/assets/readme-images/game2-flowchart.png)
+
+### 3rd Game Flow chart
+![Game3](/assets/readme-images/game3-flowchart.png)
 
 
 ## UX Description
+
+### How to play the game:
+
+Guess-The-Number is an input based application, where depending on assigned input options, the player can make guesses or make selections on what game they'd like to play. 
+
+In the first game, Guess-The-Number, the player must try to guess a number between 1-100, which the computer has "thought off".
+The player can enter a number one at a time, and they will get feedback from the terminal on whether their guess was higher or lower than the computer's number. When they guess correctly, they will be told along with the number of attempts it took to guess it.
+
+A prompt then encourages the player to either play again, or, go back to the main menu. 
+
+In the second game, Guess-The-Number (AI), the player now calls the number they're thinking of between 1-100. 
+The computer makes guesses and the player provides feedback on whether the guess is too low, high or spot on. 
+This is done by entering 1 for too low, 2 for too high and 3 for a correct guess.
+The computer then prints how many attempts it took to guess the player's number.
+
+A prompt then encourages the player to either play again, or, go back to the main menu.
+
+In the third and final game, Coin-Toss, the player hits enter to begin and is asked to call Heads or Tails
+by selecting 0 or 1 on their keyboard respectively. 
+
+The computer will "flip a coin" and the result of the coin toss is printed.
+Whilst this is predominantly a player vs computer coin toss, you could use this program to make a traditional coin toss decision as well!
+
+As per the previous games, a prompt then encourages the player to either play again, or, go back to the main menu.
 
 ## Technologies Used
 
@@ -59,9 +101,13 @@ This application comprises of 3 core programs:
 2. Another guessing game (Computer)
 3. A 'Coin-Toss' program
 
+At the beginning of the application, there is a welcome message/main menu that also re-prints at the end of a game round should the player wish to go back to the main menu.
+
 
 
 ## Other Features to Implement
+
+- On stack overflow, I saw a fantastic function that someone had written where they call how many times heads or tails is called out of 10,000 coin flips. I thought this was a fantastic idea and great bit of code that I would definitely want to have included in some way in the application in future. 
 
 ## Testing and Validation
 
@@ -70,6 +116,7 @@ This application comprises of 3 core programs:
 - Terminal Clearing
 - Converting back to key name from value
 - Guessing game ai input handling issues
+
 
 ## Peer Reviews
 
