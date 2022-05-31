@@ -296,6 +296,7 @@ class Games(Helper):
         Runs the menu introduction and provides player with an input to
         pick one of three options.
         """
+        self.clear_terminal()
 
         while True:
 
@@ -328,7 +329,7 @@ class Games(Helper):
                 print("2 for Guess-The-Number (AI)")
                 print("3 for the 'coin-toss' program\n")
 
-        print(f"{Fore.MAGENTA}Thanks for playing - Bye!")
+        print(f"\n{Fore.MAGENTA}Thanks for playing - Bye!\n")
 
     def __end_of_game(self, game):
 

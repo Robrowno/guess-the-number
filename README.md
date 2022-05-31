@@ -175,7 +175,7 @@ I have also run the program on mobile. Aside from aesthetics in the 'terminal vi
 
 ## Bugs and Issues
 
-- Terminal Clearing: I had an issue with getting my terminal clear function to work the way I expected it to. Orginally, I inserted the clear terminal at the end of each game, however, in restructuring my run.py file, I called the clear terminal function outside of the while loop in the run function in the class Games (**line 299**) and it seemed to work at first but wouldn't work on the deployed game. I then moved the the call to the clear terminal function into the end of game function and that seemed to solve the issue!
+- Terminal Clearing: I had an issue with getting my terminal clear function to work the way I expected it to. Orginally, I inserted the clear terminal at the end of each game, however, in restructuring my run.py file, I called the clear terminal function outside of the while loop in the run function in the class Games (**line 299**) and it seemed to work at first but wouldn't work on the deployed game. I then called the clear terminal function into the end of game function as well and that seemed to solve the issue!
 ![Clear Terminal Code](/assets/readme-images/clear-terminal-code.png)
 ![Clear Terminal Fix](/assets/readme-images/clear-terminal-fix.png)
 
