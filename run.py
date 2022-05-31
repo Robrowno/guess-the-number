@@ -296,7 +296,6 @@ class Games(Helper):
         Runs the menu introduction and provides player with an input to
         pick one of three options.
         """
-        self.clear_terminal()
 
         while True:
 
@@ -341,8 +340,10 @@ class Games(Helper):
         while True:
             decision = input("\nEnter [x] - play again or [c] - go back: \n")
             if decision == "x":
+                self.clear_terminal()
                 game.play()
             elif decision == "c":
+                self.clear_terminal()
                 break
             else:
                 print(f"{Fore.RED}Wrong input.\n")

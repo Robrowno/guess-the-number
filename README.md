@@ -119,6 +119,7 @@ As per the previous games, a prompt then encourages the player to either play ag
 - LucidCharts for mapping out flow charts.
 - Built-in Libraries used include os and random - used for dealing with random numbers and clearing the terminal.
 - Other Libraries used include Colorama - used for adding colour and style to the terminal. I specifically imported Fore and Style from Colorama to change font colours and brighten/dim text.
+- PEP8 Validator for checking that my Python code meets PEP8 standards.
 
 ---
 
@@ -152,13 +153,21 @@ First game Option: Guess-The-Number. The player will be greeted with the start o
 ## Other Features to Implement
 
 - On stack overflow, I saw a fantastic function that someone had written where they call how many times heads or tails is called out of 10,000 coin flips. I thought this was a fantastic idea and great bit of code that I would definitely want to have included in some way in the application in future. 
+- I would certainly like to work with different API's to see what further functionality/interactivity I could add to the application - I would try to make more random-event based games this way.
 
 ---
 
 ## Testing and Validation
 
+I ran my code through a PEP8 Validator and it passed with no issues/warnings:
+[PEP8 Validator](http://pep8online.com)
+![PEP8-check](/assets/readme-images/pep8-validation.png)
 
 
+To test my application, I used of course did my preliminary checks as I went along in the terminal in Gitpod.
+I did further testing in the browser on Mac through a deployed link through Heroku. 
+
+I have also run the program on mobile. Aside from aesthetics in the 'terminal view port' width and layout, I'm happy to say the project is running well across different media. 
 
 
 
@@ -166,7 +175,10 @@ First game Option: Guess-The-Number. The player will be greeted with the start o
 
 ## Bugs and Issues
 
-- Terminal Clearing: I had an issue with getting my terminal clear function to work the way I expected it to. Orginally, I inserted the clear terminal at the end of each game, however, in restructuring my run.py file, I called the clear terminal function outside of the while loop in the run function in the class Games in that fixed the issue.
+- Terminal Clearing: I had an issue with getting my terminal clear function to work the way I expected it to. Orginally, I inserted the clear terminal at the end of each game, however, in restructuring my run.py file, I called the clear terminal function outside of the while loop in the run function in the class Games (**line 299**) and it seemed to work at first but wouldn't work on the deployed game. I then moved the the call to the clear terminal function into the end of game function and that seemed to solve the issue!
+![Clear Terminal Code](/assets/readme-images/clear-terminal-code.png)
+![Clear Terminal Fix](/assets/readme-images/clear-terminal-fix.png)
+
 - Converting back to key name from value: this was a real challenge. It was only through a source on stack overflow and some help from my friend Nickolay that we worked out how to convert values back into key-names taken from a dictionary. This solution was utilised in Game 3 (Coin Toss).
 - Guessing game ai input handling issues: In the second game (Guess-The-Number (AI)), I had an issue where where you could input any integer you wanted when the "Press 1 for too low, 2 for too high or 3 for correct" Promt came up, as I used my get_int function which took any integers and returned them. I found that the way around this would be to create a function to handle this specific request - I called it three_option_handler and it only returned if the response was either 1, 2 or 3. This resolved the issue perfectly. 
 - Printing a list of past guesses: Originally, I kept getting either an empty list printing to the terminal or having it display as "None". The solution was to move the empty list above the while loop in the first game as it seems that the list kept resetting as the game was running. 
