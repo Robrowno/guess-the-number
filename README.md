@@ -135,12 +135,97 @@ At the beginning of the application, there is a welcome message/main menu that a
 
 ![Welcome/Menu](/assets/readme-images/game-menu.png)
 
-First game Option: Guess-The-Number. The player will be greeted with the start of the game like this:
+**First Game Option: Guess-The-Number.** 
+The player will be greeted with the start of the game like this:
 
 ![Game1 start](/assets/readme-images/game1-start.png)
 
+When a player makes a guess, which will most likely be incorrect on first guess, a response message is printed in the terminal which will influence the player's next guess:
 
+![Too High](/assets/readme-images/game1-toohigh.png)
 
+![Too Low](/assets/readme-images/game1-toolow.png)
+
+With each passing guess in the round, where the player doesn't successfully guess the correct number, the previous guesses are printed in a list so that the player doesn't forget/guess numbers that they have already guessed previously:
+
+![Previous Guesses](/assets/readme-images/guesses-list.png)
+
+When the player guesses the number correctly, the following will print to the terminal:
+
+![Correct!](/assets/readme-images/game1-correct.png)
+
+If you press x, you will return to the start of game 1 (Guess-The-Number):
+
+![Press-x](/assets/readme-images/press-x-game1.png)
+
+If you press c, you will return to the menu and you will have the ability to start a new game or exit the application: 
+
+![Press-c](/assets/readme-images/press-c.png)
+
+**Second Game Option: Guess-The-Number (AI).**
+The player will be greeted with the start of the game like this:
+
+![Game2 start](/assets/readme-images/game2-start.png)
+
+In this demo, I have decided to pick the number **75**. As you can see below, the computer has made its first guess that is too low - the user would press 1 to indicate this to the computer:
+
+![Too Low](/assets/readme-images/game2-toolow.png)
+
+Now, in the computer's second attempt, the computer has made a guess that is too high. The user will now feedback to the computer that this is the case by entering the number 2 where directed:
+
+![Too High](/assets/readme-images/game2-toohigh.png)
+
+Eventually, assuming of course that the player informs the computer in good faith, the computer will guess the correct number, and when this happens, the player should press the number 3 to confirm that their number has been guesses. A statement is then printed to say how many attempts it took for the computer to guess the correct number:
+
+![Correct!](/assets/readme-images/game2-correct.png)
+
+The player, as per the first game, is presented with the option to play again (press x) or go back to the menu and exit the current game (press c).
+
+If they press x:
+
+![Press-x](/assets/readme-images/game2-press-x.png)
+
+And if they press c:
+![Press-c](/assets/readme-images/press-c.png)
+
+**Third Game Option: Coin Toss**
+The player will see this message at the start of the program:
+
+![Game3 start](/assets/readme-images/game3-start.png)
+
+When the player presses Enter, there will be a prompt that asks the player to pick heads or tails by entering 0 or 1 respectively:
+
+![Heads or Tails?](/assets/readme-images/game3-headsortails.png)
+
+If the player enters 0 (Heads) - one of two options will print:
+
+If they call heads and it lands on tails:
+
+![heads-tails](/assets/readme-images/heads-tails.png)
+
+If they call heads and it lands on heads:
+
+![heads-heads](/assets/readme-images/heads-heads.png)
+
+If the player enters 1(Tails) - one of two options will print:
+
+If they call tails and it lands on heads:
+
+![tails-heads](/assets/readme-images/tails-heads.png)
+
+If they call tails and it lands on tails:
+
+![tails-tails](/assets/readme-images/tails-tails.png)
+
+At the end of the round, as per the previous games, the player is always presented with the option to play again or exit the current game and return to the menu. 
+
+If they press x:
+
+![Press-x](/assets/readme-images/game3-press-x.png)
+
+And if they press c:
+
+![Press-c](/assets/readme-images/press-c.png)
 
 
 ### Error/Invalid input messages:
@@ -175,13 +260,17 @@ I have also run the program on mobile. Aside from aesthetics in the 'terminal vi
 
 ## Bugs and Issues
 
-- Terminal Clearing: I had an issue with getting my terminal clear function to work the way I expected it to. Orginally, I inserted the clear terminal at the end of each game, however, in restructuring my run.py file, I called the clear terminal function outside of the while loop in the run function in the class Games (**line 299**) and it seemed to work at first but wouldn't work on the deployed game. I then called the clear terminal function into the end of game function as well and that seemed to solve the issue!
+- Terminal Clearing: I had an issue with getting my terminal clear function to work the way I expected it to. Orginally, I inserted the clear terminal at the end of each game, however, in restructuring my run.py file, I called the clear terminal function outside of the while loop in the run function in the class Games (**line 299**) and it seemed to work at first but wouldn't work on the deployed game. I then called the clear terminal function into the end of game function as well and that seemed to solve the issue by pushing the terminal up to the top of the view port. It's not perfect, but it works.
 ![Clear Terminal Code](/assets/readme-images/clear-terminal-code.png)
 ![Clear Terminal Fix](/assets/readme-images/clear-terminal-fix.png)
 
 - Converting back to key name from value: this was a real challenge. It was only through a source on stack overflow and some help from my friend Nickolay that we worked out how to convert values back into key-names taken from a dictionary. This solution was utilised in Game 3 (Coin Toss).
+![Retrieving Dictionary Keys](/assets/readme-images/return-dict-keys.png)
+
 - Guessing game ai input handling issues: In the second game (Guess-The-Number (AI)), I had an issue where where you could input any integer you wanted when the "Press 1 for too low, 2 for too high or 3 for correct" Promt came up, as I used my get_int function which took any integers and returned them. I found that the way around this would be to create a function to handle this specific request - I called it three_option_handler and it only returned if the response was either 1, 2 or 3. This resolved the issue perfectly. 
-- Printing a list of past guesses: Originally, I kept getting either an empty list printing to the terminal or having it display as "None". The solution was to move the empty list above the while loop in the first game as it seems that the list kept resetting as the game was running. 
+![3 Option Handler](/assets/readme-images/3-option-handler.png)
+
+- Printing a list of past guesses: Originally, I kept getting either an empty list printing to the terminal or having it display as "None". The solution was to move the empty list above the while loop in the first game (**Line 77**)as it seems that the list kept resetting as the game was running. 
 
 ---
 
@@ -189,6 +278,14 @@ I have also run the program on mobile. Aside from aesthetics in the 'terminal vi
 
 To get some peer reviews for this project, I went to the following:
 
+I had my friend Nickolay, who is fantastic with Back-end languages, review my code and during the project he has pushed me to do better any time I've asked him to review my code. 
+He's helped me solve issues/bugs his great understanding of Python. 
+
+I submitted my project to the peer-code-review channel in the C.I Slack community and received the following feedback: xxx
+
+
+
+Daisy, my C.I Mentor, has been reviewing my work at the beginning, middle and end of my project, providing vital feedback in the direction and scope of my project. 
 
 
 ---
@@ -197,6 +294,14 @@ To get some peer reviews for this project, I went to the following:
 
 Follow the steps below to see how to deploy a repository through Heroku:
 
+### Steps to deploy your app to Heroku:
+
+1. Login to Heroku in the terminal byt entering the command **heroku login -i** followed by your login details.
+2. Retreive your application's name from heroku and enter **heroku apps**.
+3. Set the heroku remote: (make sure you replace the <app_name> with your actual application name) heroku git:remote -a <app_name>
+4. Next, as per a usual deployment to github, enter the following commands with a similar message: git add. (followed by -->) git commit -m "Deploy to Heroku through CLI" (followed by -->) git push origin main (followed by -->) git push heroku main
+
+Alternatively, if available, you can also enable auto or manual deployments if you link your github account and repository to your Heroku account. This enables much faster linked deployments without using the CLI.
 
 
 ---
@@ -216,6 +321,7 @@ With many thanks to the following:
 - Link to Colorama page/tutorial: [Colorama](https://pypi.org/project/colorama/)
 - Responsiveness Check: [Am I Responsive?](https://ui.dev/amiresponsive)
 - Flow Chart maker: [LucidChart](https://www.lucidchart.com/pages/landing/flowchart-software?utm_source=google&utm_medium=cpc&utm_campaign=_chart_en_us+tier1_desktop_search_strategic_exact_&km_CPC_CampaignId=14965870688&km_CPC_AdGroupID=137102774068&km_CPC_Keyword=flowchart%20maker&km_CPC_MatchType=e&km_CPC_ExtensionID=&km_CPC_Network=g&km_CPC_AdPosition=&km_CPC_Creative=553386940278&km_CPC_TargetID=kwd-11327061&km_CPC_Country=1007246&km_CPC_Device=c&km_CPC_placement=&km_CPC_target=&gclid=Cj0KCQjw1tGUBhDXARIsAIJx01mTxHtq7xGFYKWafXDEHdg5lrWjdvIRNSLoEbttCEVQMz3DcstJi3YaAmRnEALw_wcB)
+- Stephen Darcy on the C.I Slack channel **#lets-deploy-it** has a great set of instructions on deploying to Heroku which I have found to be particularly useful as at the time of making this project Heroku was hacked and had to take down auto and manual deployment through linked github accounts.
 
 
 I couldn't have done this project without the help of some key individuals:
