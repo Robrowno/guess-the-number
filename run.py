@@ -147,7 +147,7 @@ class ComputerGuesses(Helper):
             if var3 >= 1 and var3 <= 3:
                 break
             else:
-                print(f"{Fore.RED}Input is not between 1 and 3")
+                print(f"\n{Fore.RED}Input is not between 1 and 3\n")
         return var3
 
     def play(self):
@@ -161,7 +161,7 @@ class ComputerGuesses(Helper):
         self.guesses = 0
 
         print("\nPick a number between 1 and 100, and I'll try to guess it!")
-        user_response = self.__number_handler("Enter your chosen number: ")
+        user_response = self.__number_handler("Enter your chosen number: \n")
 
         mini = 1
         maxi = 101
@@ -217,7 +217,7 @@ class CoinToss(Helper):
             if user_value == 0 or user_value == 1:
                 return user_value
             else:
-                print(f"{Fore.RED}Invalid input, try again")
+                print(f"\n{Fore.RED}Invalid input, try again\n")
 
     def play(self):
 

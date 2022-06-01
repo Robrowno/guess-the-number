@@ -8,7 +8,7 @@ This app runs 3 core programs:
 3. Coin-Toss: A bonus program that simulates 'flipping a coin' with the computer. 
 
 This application explores the posibilites of automation with Python, handling user inputs and random 
-outcomes through the use of functions. 
+outcomes through the use of classes and functions. 
 
 The desired goals from the perspective of myself and for the player reflects this. I want to demonstrate what can be done with Python through the aim of creating 3 programs that can simulate random game events that the user is likely to have played in real life, whether attempting to guess a number that their friend was thinking of to flipping a coin to decide on who goes first in a game.
 
@@ -26,7 +26,7 @@ Note: The application is run in a 'mini terminal' in the browser through Heroku.
 ---
 
 ## Table of Contents
-1. [Wireframe](#wireframe)
+1. [Wireframe and Flow charts](#wireframe)
 2. [UX Description](#ux-description)
 3. [Technologies used](#technologies-used)
 4. [Application Features](#application-features)
@@ -39,7 +39,7 @@ Note: The application is run in a 'mini terminal' in the browser through Heroku.
 
 ---
 
-## Wireframe 
+## Wireframe
 
 - I used Blasamiq to make a flow chart to map out the logic of how I wanted the program to run. 
 ![Balsamiq Wireframe](/assets/readme-images/pp3-wireframe.png)
@@ -47,21 +47,21 @@ Note: The application is run in a 'mini terminal' in the browser through Heroku.
 I used this model as a template for me to visualise how I was going to go about making this application.
 You can see in the original flow chart I didn't come up with the option to exit the program yet. The coloured asterisks are meant to help visually guide where you are taken back to at the end of round depending on whether you want to play again or exit the game.
 
-### Program flow charts:
+## Program flow charts:
 
-- A flow chart displaying the Main Menu
+- **A flow chart displaying the Main Menu**
 ### Main Menu Flow chart 
 ![Main Menu](/assets/readme-images/game-menu-flowchart.png)
 
-- Game 1: Guess-The-Number
+- **Game 1: Guess-The-Number**
 ### 1st Game Flow chart 
 ![Game1](/assets/readme-images/game1-flowchart.png)
 
-- Game 2: Guess-The-Number (AI)
+- **Game 2: Guess-The-Number (AI)**
 ### 2nd Game Flow chart
 ![Game2](/assets/readme-images/game2-flowchart.png)
 
-- Game 3: Coin Toss
+- **Game 3: Coin Toss**
 ### 3rd Game Flow chart
 ![Game3](/assets/readme-images/game3-flowchart.png)
 
@@ -229,6 +229,8 @@ And if they press c:
 
 
 ### Error/Invalid input messages:
+
+In this application, there are various different messages to inform the user that they have made a mistake and entered an invalid option.
 
 
 
