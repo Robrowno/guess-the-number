@@ -232,6 +232,40 @@ And if they press c:
 
 In this application, there are various different messages to inform the user that they have made a mistake and entered an invalid option.
 
+In the main menu, you will see a message like this printed if you enter an invalid input:
+
+![Menu Input error](/assets/readme-images/menu-input-error.png)
+
+In game1 (Guess-The-Number), these are the errors you will find if you enter incorrect integers, strings or floating point numbers: 
+
+![Incorrect Integer](/assets/readme-images/input-500.png)
+![Incorrect Input: String](/assets/readme-images/input-string.png)
+![Incorrect Input:Float](/assets/readme-images/input-float.png)
+
+If you enter an invalid option at the end of a round to either play again or return to menu, such as entering a number, incorrect string or float, you'll find an error message like this:
+
+![Go Back Input error](/assets/readme-images/go-back-errors.png)
+
+
+In game2 (Guess-The-Number (AI)), these are the errors you will expect by entering incorrect integers, strings or floating point numbers:
+
+
+
+
+
+In game3 (Coin-Toss), these are the errors you will see by entering incorrect inputs where asked:
+
+![Heads or Tails errors](/assets/readme-images/heads-tails-errors.png)
+
+At the end of a round of Coin-Toss, if you input incorrect options, you'll get messages like this:
+
+![Go Back Input errors](/assets/readme-images/h-t-end-round-errors.png)
+
+
+
+
+
+
 
 
 

@@ -135,7 +135,7 @@ class ComputerGuesses(Helper):
             if var100 >= 1 and var100 <= 100:
                 return var100
             else:
-                print(f"{Fore.RED}Input is not between 1 and 100")
+                print(f"\n{Fore.RED}Input is not between 1 and 100\n")
 
     def __three_option_handler(self, string):
         """
