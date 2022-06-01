@@ -337,6 +337,9 @@ Aside from aesthetics in the 'terminal view port' width and layout, I'm happy to
 
 - Printing a list of past guesses: Originally, I kept getting either an empty list printing to the terminal or having it display as "None". The solution was to move the empty list above the while loop in the first game (**Line 77**)as it seems that the list kept resetting as the game was running. 
 
+ - An interesting one spotted by Niki Tester on Slack was that my attempts numbers were always out by 1. To fix this, I added " +1" to the final f string print messages at the end of the guess-the number games (game1 and game2) and that solved the issue.
+
+
 ---
 
 ## Peer Reviews
@@ -346,7 +349,11 @@ To get some peer reviews for this project, I went to the following:
 I had my friend Nickolay, who is fantastic with Back-end languages, review my code and during the project he has pushed me to do better any time I've asked him to review my code. 
 He's helped me solve issues/bugs his great understanding of Python. 
 
-I submitted my project to the peer-code-review channel in the C.I Slack community and received the following feedback: xxx
+I submitted my project to the peer-code-review channel in the C.I Slack community and received the following feedback:
+
+- Niki Tester on Slack suggested I add in a feature to remind the user what their chosen number was in game two. I reassigned the orginal user_response in to two variables: user_response and user_number. It now shows above every prompt as a dimmed print statement. **This was a great idea and addition to the app so many thanks to Niki!**
+
+- 
 
 
 
