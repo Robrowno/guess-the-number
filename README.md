@@ -120,6 +120,7 @@ As per the previous games, a prompt then encourages the player to either play ag
 - Built-in Libraries used include os and random - used for dealing with random numbers and clearing the terminal.
 - Other Libraries used include Colorama - used for adding colour and style to the terminal. I specifically imported Fore and Style from Colorama to change font colours and brighten/dim text.
 - PEP8 Validator for checking that my Python code meets PEP8 standards.
+- Google Collab for testing small pieces of code outside of Gitpod and still within a browser.
 
 ---
 
@@ -249,8 +250,15 @@ If you enter an invalid option at the end of a round to either play again or ret
 
 In game2 (Guess-The-Number (AI)), these are the errors you will expect by entering incorrect integers, strings or floating point numbers:
 
+![game2 start errors](/assets/readme-images/game2-start-errors.png)
 
+Similarly, if you don't input correct feedback options, you'll be presented with errors:
 
+![Too-high Too-low errors](/assets/readme-images/toolow-toohigh-errors.png)
+
+As above, if you enter incorrect inputs at the end of a round, errors will show as below:
+
+![Go Back Input errors](/assets/readme-images/game2-end-error.png)
 
 
 In game3 (Coin-Toss), these are the errors you will see by entering incorrect inputs where asked:
@@ -262,20 +270,21 @@ At the end of a round of Coin-Toss, if you input incorrect options, you'll get m
 ![Go Back Input errors](/assets/readme-images/h-t-end-round-errors.png)
 
 
-
-
-
-
-
-
-
 ---
 
 ## Other Features to Implement
 
-- On stack overflow, I saw a fantastic function that someone had written where they call how many times heads or tails is called out of 10,000 coin flips. I thought this was a fantastic idea and great bit of code that I would definitely want to have included in some way in the application in future. 
+- On stack overflow, I saw a fantastic function that someone had written where they call how many times heads or tails is called out of 10,000 coin flips. I thought this was a fantastic idea and great bit of code that I would definitely want to have included in some way in the application in future. I did trial a similar version in Google collab but it didn't make the final cut of the current version of the application:
+
+![Interesting Coin-Toss function](/assets/readme-images/interesting-cointoss-function.png)
+
 - I would certainly like to work with different API's to see what further functionality/interactivity I could add to the application - I would try to make more random-event based games this way.
 
+- There are no scores or tallies in this game yet, which would also be one of the next festures to add as this would add more of a goal to each game.
+
+- A player vs Player version of the Coin Toss with a best of 3 and 5 options being available. I'm sure a PvP version of Guess-The-Number (game1) could be created as well.
+
+- A small but interesting idea nonetheless would be to add the option to enter your name. This would be especially true if I implement a PvP (Player vs Player) option in future.
 ---
 
 ## Testing and Validation
@@ -285,12 +294,31 @@ I ran my code through a PEP8 Validator and it passed with no issues/warnings:
 ![PEP8-check](/assets/readme-images/pep8-validation.png)
 
 
-To test my application, I used of course did my preliminary checks as I went along in the terminal in Gitpod.
-I did further testing in the browser on Mac through a deployed link through Heroku. 
+To test my application, I used of course did my preliminary checks as I went along in the terminal in Gitpod using many print() statements in various sections of code.
+I did further testing in the browser on Mac through a deployed link through Heroku to make sure all output was working as expected. This did indeed lead me to make adjustments particularly in print statement spacing and the clear terminal function.
 
-I have also run the program on mobile. Aside from aesthetics in the 'terminal view port' width and layout, I'm happy to say the project is running well across different media. 
+Any indentation or miss-types were also corrected as I went along, and individual or small pieces of code were usually tested in Google Collab first before being segmented in to the run.py file, particularly if I felt that what I was writing was stretching my comfort zone.
 
+I checked to make sure the game ran in correct order by making first running small sections of the game followed by the whole game when it was near completion. 
 
+To test game1, game2 and game3:
+- checked correct prompts appeared when expected
+- checked spacing, colour and spelling were all as desired
+- checked correct inputs appeared when expected and handled information with no errors. See below:
+
+All inputs were tested in the gitpod terminal meticulously during the process of the application build. I would estimate several hours worth of testing on inputs alone to make sure they behaved as expected. 
+
+I checked for the following:
+
+- Across all game inputs I asked the following:
+1. Can they handle incorrect inputs with an appropriate message reliably?
+2. Is a Try/Except statement to prevent errors?
+3. Should I handle this input through a dedicated function?
+
+I am happy to say I am pleased that all inputs work well. The same rigorous testing would be applied to any future input options added to the application.
+
+I have also run the program on mobile. Personally, I ran the game on iPhone 5, X and 12 with no obvious issues. 
+Aside from aesthetics in the 'terminal view port' width and layout, I'm happy to say the project is running well across different media. As well as different media, I ran the project on 2 different browsers, Google Chrome and Firefox. Again, I am happy with performance across both. 
 
 ---
 
@@ -302,6 +330,7 @@ I have also run the program on mobile. Aside from aesthetics in the 'terminal vi
 
 - Converting back to key name from value: this was a real challenge. It was only through a source on stack overflow and some help from my friend Nickolay that we worked out how to convert values back into key-names taken from a dictionary. This solution was utilised in Game 3 (Coin Toss).
 ![Retrieving Dictionary Keys](/assets/readme-images/return-dict-keys.png)
+![Testing in Google Collab](/assets/readme-images/keys-from-dict-value.png)
 
 - Guessing game ai input handling issues: In the second game (Guess-The-Number (AI)), I had an issue where where you could input any integer you wanted when the "Press 1 for too low, 2 for too high or 3 for correct" Promt came up, as I used my get_int function which took any integers and returned them. I found that the way around this would be to create a function to handle this specific request - I called it three_option_handler and it only returned if the response was either 1, 2 or 3. This resolved the issue perfectly. 
 ![3 Option Handler](/assets/readme-images/3-option-handler.png)
