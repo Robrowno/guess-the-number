@@ -99,7 +99,7 @@ As per the previous games, a prompt then encourages the player to either play ag
 - Target Audience: A user who will want to play a command-line interface game, who will take inspiration from this to make their own Python-based game or just casually try out a new type of simple game. 
 
 - The user can expect the following:
-  - An completely intuitive game with easy to comprehend instructions/rules
+  - A completely intuitive game with easy to comprehend instructions/rules
   - A completely command-line-interface based game
   - No time limits. This game is to be enjoyed at the user's own pace.
   - Playable across all devices.
@@ -280,7 +280,7 @@ At the end of a round of Coin-Toss, if you input incorrect options, you'll get m
 
 - I would certainly like to work with different API's to see what further functionality/interactivity I could add to the application - I would try to make more random-event based games this way.
 
-- There are no scores or tallies in this game yet, which would also be one of the next festures to add as this would add more of a goal to each game.
+- There are no scores or tallies in this game yet, which would also be one of the next features to add as this would add more of a goal to each game.
 
 - A player vs Player version of the Coin Toss with a best of 3 and 5 options being available. I'm sure a PvP version of Guess-The-Number (game1) could be created as well.
 
@@ -294,7 +294,7 @@ I ran my code through a PEP8 Validator and it passed with no issues/warnings:
 ![PEP8-check](/assets/readme-images/pep8-validation.png)
 
 
-To test my application, I used of course did my preliminary checks as I went along in the terminal in Gitpod using many print() statements in various sections of code.
+To test my application, I did my preliminary checks as I went along in the terminal in Gitpod using many print() statements in various sections of code.
 I did further testing in the browser on Mac through a deployed link through Heroku to make sure all output was working as expected. This did indeed lead me to make adjustments particularly in print statement spacing and the clear terminal function.
 
 Any indentation or miss-types were also corrected as I went along, and individual or small pieces of code were usually tested in Google Collab first before being segmented in to the run.py file, particularly if I felt that what I was writing was stretching my comfort zone.

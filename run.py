@@ -168,7 +168,11 @@ class ComputerGuesses(Helper):
 
         while True:
 
-            computer_guess = random.randint(mini, maxi)
+            try:
+                computer_guess = random.randint(mini, maxi)
+            except ValueError:
+                print(f"{Fore.RED}You're not playing the game correctly!!")
+                break
             print(f"\n{computer_guess}\n")
             print(f"{Style.DIM}Your number: {user_number}")
             print("Too low? Press[1]. Too high? Press[2]. Correct? press[3]\n")
@@ -180,11 +184,17 @@ class ComputerGuesses(Helper):
                 maxi = computer_guess - 1
                 self.guesses += 1
             elif user_response == 3:
+                print(
+                    f"\n{Fore.GREEN}I got your number in {self.guesses + 1}"
+                    " attempts!")
                 break
 
-        print(
-            f"\n{Fore.GREEN}I got your number in {self.guesses + 1} attempts!"
-            )
+            if user_number == computer_guess:
+                print(f"\n{Fore.YELLOW}Hmmm - are you telling the truth??")
+                print(
+                    f"\n{Fore.GREEN}I got your number in {self.guesses + 1}"
+                    " attempts!")
+                break
 
 # Coin Toss (Heads/Tails)
 
@@ -194,6 +204,7 @@ class ComputerGuesses(Helper):
 # The 'coin' is flipped and a result is generated
 # See who wins the round
 # Prompt to either 'flip a coin' again or do something else
+
 
 class CoinToss(Helper):
 
