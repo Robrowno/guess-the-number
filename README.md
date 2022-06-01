@@ -339,6 +339,8 @@ Aside from aesthetics in the 'terminal view port' width and layout, I'm happy to
 
  - An interesting one spotted by Niki Tester on Slack was that my attempts numbers were always out by 1. To fix this, I added " +1" to the final f string print messages at the end of the guess-the number games (game1 and game2) and that solved the issue.
 
+ - There was an issue where if the player didn't play the game as intended and lied about the results in game2 (Guess-The-Number (AI)), it would throw a traceback error in the terminal. An extra try/except statement was included and another if statement and it catches out the problem. This issue in particular was spotted by Niki Tester and together we found a solution to the problem.
+
 
 ---
 
