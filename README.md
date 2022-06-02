@@ -132,6 +132,7 @@ Typically, the colour red will indicate an error, yellow will indicate a prompt 
 - Other Libraries used include Colorama - used for adding colour and style to the terminal. I specifically imported Fore and Style from Colorama to change font colours and brighten/dim text.
 - PEP8 Validator for checking that my Python code meets PEP8 standards.
 - Google Collab for testing small pieces of code outside of Gitpod and still within a browser.
+- Quickplayer on Mac to screen record.
 
 ---
 
@@ -445,6 +446,7 @@ With many thanks to the following:
 - Responsiveness Check: [Am I Responsive?](https://ui.dev/amiresponsive)
 - Flow Chart maker: [LucidChart](https://www.lucidchart.com/pages/landing/flowchart-software?utm_source=google&utm_medium=cpc&utm_campaign=_chart_en_us+tier1_desktop_search_strategic_exact_&km_CPC_CampaignId=14965870688&km_CPC_AdGroupID=137102774068&km_CPC_Keyword=flowchart%20maker&km_CPC_MatchType=e&km_CPC_ExtensionID=&km_CPC_Network=g&km_CPC_AdPosition=&km_CPC_Creative=553386940278&km_CPC_TargetID=kwd-11327061&km_CPC_Country=1007246&km_CPC_Device=c&km_CPC_placement=&km_CPC_target=&gclid=Cj0KCQjw1tGUBhDXARIsAIJx01mTxHtq7xGFYKWafXDEHdg5lrWjdvIRNSLoEbttCEVQMz3DcstJi3YaAmRnEALw_wcB)
 - Stephen Darcy on the C.I Slack channel **#lets-deploy-it** has a great set of instructions on deploying to Heroku which I have found to be particularly useful as at the time of making this project Heroku was hacked and had to take down auto and manual deployment through linked github accounts.
+- To covert videos to gifs I went to EZGIF: [EZGIF.COM](https://ezgif.com/)
 
 
 I couldn't have done this project without the help of some key individuals:
