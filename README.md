@@ -23,6 +23,10 @@ Live Link to the app on Heroku here: [Guess-The-Number](https://guess-the-number
 
 Note: The application is run in a 'mini terminal' in the browser through Heroku. Therefore, projecting the terminal to showcase the python logic at work is more important that ensuring the width of the 'screen' is aesthetically pleasing across all devices.
 
+### Application in action
+
+![Game Running GIF](/assets/readme-images/ezgif.com-gif-maker.mov)
+
 ---
 
 ## Table of Contents
@@ -92,6 +96,9 @@ The computer will "flip a coin" and the result of the coin toss is printed.
 Whilst this is predominantly a player vs computer coin toss, you could use this program to make a traditional coin toss decision as well!
 
 As per the previous games, a prompt then encourages the player to either play again, or, go back to the main menu.
+
+I've used colorama to provide more visual cues as user feedback when they engage with the application. 
+Typically, the colour red will indicate an error, yellow will indicate a prompt to action or a warning and green indicates a round win or end of round message. I use cyan and magenta for some other prompts including too high or too low guesses in the second game and for the goodbye message if you exit the application. 
 
 
 ### User Stories
@@ -268,6 +275,20 @@ In game3 (Coin-Toss), these are the errors you will see by entering incorrect in
 At the end of a round of Coin-Toss, if you input incorrect options, you'll get messages like this:
 
 ![Go Back Input errors](/assets/readme-images/h-t-end-round-errors.png)
+
+### Specific errors for miss-use of Guess-The-Number (AI) 
+
+It might be obvious to you after looking at the second game that a player might lie about a number they've entered and either say it's too high/low when it's correct or press too low when the number is higher or vice versa. 
+
+There are some catches for this scenario, as I'll demonstrate below:
+
+If a player sees that the computer has correctly guessed the number, and lies, there is a fallback piece of code that will register this and print the following message:
+
+![Lying about correct number](/assets/readme-images/lying-player-2.png)
+
+If a player intentially keeps lying about whether the number that the computer guesses is higher or lower, the computer will catch on eventually and print the following message:
+
+![Not playing properly](/assets/readme-images/lying-player-1.png)
 
 
 ---
