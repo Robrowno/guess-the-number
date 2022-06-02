@@ -355,11 +355,9 @@ I submitted my project to the peer-code-review channel in the C.I Slack communit
 
 - Niki Tester on Slack suggested I add in a feature to remind the user what their chosen number was in game two. I reassigned the orginal user_response in to two variables: user_response and user_number. It now shows above every prompt as a dimmed print statement. **This was a great idea and addition to the app so many thanks to Niki!**
 
-- 
+- A few other users on Slack also made some suggestions regarding how I could present the list of past guesses differently and also I had a suggestion for future builds to automate the whole second game and remove the user input element of it. 
 
-
-
-Daisy, my C.I Mentor, has been reviewing my work at the beginning, middle and end of my project, providing vital feedback in the direction and scope of my project. 
+- Daisy, my C.I Mentor, has been reviewing my work at the beginning, middle and end of my project, providing vital feedback in the direction and scope of my project. 
 
 
 ---

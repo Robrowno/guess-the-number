@@ -1,5 +1,6 @@
 import random
 import os
+import time
 
 import colorama
 from colorama import Fore, Style
@@ -333,6 +334,7 @@ class Games(Helper):
                 self.__end_of_game(self.game3)
             elif menu_input > 3 or menu_input < 0:
                 print(f"{Fore.RED}Invalid option! Pick: 0, 1, 2 or 3 only")
+                time.sleep(3)
                 self.run()
 
             else:
