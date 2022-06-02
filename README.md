@@ -341,6 +341,8 @@ Aside from aesthetics in the 'terminal view port' width and layout, I'm happy to
 
  - There was an issue where if the player didn't play the game as intended and lied about the results in game2 (Guess-The-Number (AI)), it would throw a traceback error in the terminal. An extra try/except statement was included and another if statement and it catches out the problem. This issue in particular was spotted by Niki Tester and together we found a solution to the problem.
 
+ - On the deployed game, I had a flickering issue when a number greater than 3 or less than zero was entered in the main menu. To fix this, I imported Python's time module and set a time.sleep for 3 seconds in the menu run function. This did fix the flickering but I still wasn't too happy as during the 3 second delay you could continue to input different options. It was only after this I realised I was calling my clear terminal function too early and this was causing the flickering. By removing this, it did an even better job than introducing the time module and so I promptly removed it.
+
 
 ---
 
@@ -357,7 +359,9 @@ I submitted my project to the peer-code-review channel in the C.I Slack communit
 
 - A few other users on Slack also made some suggestions regarding how I could present the list of past guesses differently and also I had a suggestion for future builds to automate the whole second game and remove the user input element of it. 
 
-- Daisy, my C.I Mentor, has been reviewing my work at the beginning, middle and end of my project, providing vital feedback in the direction and scope of my project. 
+- Dave on Slack found a flickering bug in the main menu if an incorrect integer greater than 3 or less than 0 was entered. I took this feedback and imported the python time module to introduce a small pause to stop the flickering issue. It was only after this I realised I was calling my clear terminal function too early and this was causing the flickering. By removing this, it did an even better job than introducing the time module and so I promptly removed it.
+
+- Daisy, my C.I Mentor, has been reviewing my work at the beginning, middle and end of my project, providing vital feedback in the direction and scope of my project. In the final review right the end of the project, Daisy was very happy with how far I'd come with the project, and after a couple of further suggestions for my code and README file, I was ready to submit it.
 
 
 ---
@@ -366,15 +370,37 @@ I submitted my project to the peer-code-review channel in the C.I Slack communit
 
 Follow the steps below to see how to deploy a repository through Heroku:
 
+### Build an app in Heroku:
+
+To build an app in Heroku, follow these steps:
+
+1. Open the Heroku site, login and access your dashboard. In the top right hand corner of the website, click on the "New" button and select "create new app".
+![Heroku Home](/assets/readme-images/heroku-start.png)
+
+2. You will be brought to a new page where you can enter the name of your app and the region you are based in. Once you do this, click on the "create app" button:
+![Create New app](/assets/readme-images/heroku-newapp.png)
+
+3. Once you do this, you will be brought to the app-specific dashboard. 
+![Heroku Pipeline](/assets/readme-images/heroku-pipeline.png)
+
+4. Make sure you connect/link your github account for ease of deployment and then head to the settings tab to configure vars and install required buildpacks:
+![Settings](/assets/readme-images/heroku-settings.png)
+  - You will want your config vars to have the key and value --> PORT and 8000
+  - Buildpacks required will be Python and Node.JS **in that order**
+![Config Vars and Buildpacks](/assets/readme-images/build-config-vars.png)
+
+5. Once this is done, you are ready to begin deploying your application!
+
+
 ### Steps to deploy your app to Heroku:
 
-1. Login to Heroku in the terminal byt entering the command **heroku login -i** followed by your login details.
-2. Retreive your application's name from heroku and enter **heroku apps**.
+1. Login to Heroku in the terminal by entering the command **heroku login -i** followed by your login details.
+2. Retrieve your application's name from heroku and enter **heroku apps**.
 3. Set the heroku remote: (make sure you replace the <app_name> with your actual application name) heroku git:remote -a <app_name>
 4. Next, as per a usual deployment to github, enter the following commands with a similar message: git add. (followed by -->) git commit -m "Deploy to Heroku through CLI" (followed by -->) git push origin main (followed by -->) git push heroku main
 
-Alternatively, if available, you can also enable auto or manual deployments if you link your github account and repository to your Heroku account. This enables much faster linked deployments without using the CLI.
 
+Alternatively, if available, you can also enable auto or manual deployments if you link your github account and repository to your Heroku account. This enables much faster linked deployments without using the CLI.
 
 ---
 
