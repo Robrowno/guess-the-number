@@ -25,7 +25,11 @@ Note: The application is run in a 'mini terminal' in the browser through Heroku.
 
 ### Application in action
 
-![Game Running GIF](/assets/readme-images/ezgif.com-gif-maker.mov)
+![Game1 GIF](/assets/readme-images/ezgif.com-gif-maker.gif)
+
+![Game2 GIF](/assets/readme-images/ezgif.com-gif-maker2.gif)
+
+![Game3 GIF](/assets/readme-images/ezgif.com-gif-maker3.gif)
 
 ---
 
