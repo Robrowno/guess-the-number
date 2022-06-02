@@ -318,6 +318,7 @@ class Games(Helper):
                 self.game3.play()
                 self.__end_of_game(self.game3)
             elif menu_input > 3 or menu_input < 0:
+                self.clear_terminal()
                 print(f"\n{Fore.RED}Invalid option! Pick: 0, 1, 2 or 3 only\n")
 
                 self.run()
